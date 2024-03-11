@@ -71,7 +71,7 @@ const App = () => {
   };
 
   return (
-    <div style={{background: "black"}}>
+    <div style={{background: "#F6F8FA"}}>
       <h1>Movies</h1>
       <div>
       <h2>Add Movie</h2>
