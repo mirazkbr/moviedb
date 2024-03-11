@@ -18,7 +18,7 @@ button {
 @media screen and (max-width: 375px) {
   
   #cardimg {
-      width: 155px !important;
+      width: 150px !important;
       height: auto !important;
   }
 }
