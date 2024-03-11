@@ -100,7 +100,7 @@ const App = () => {
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'start', padding: '10px'}}>
         {movies.map((movie, index) => (
           <div id='card' key={index} style={{ display: "flex", padding: '10px' }}>
-            <div style={{ width: '200px', height: '300px', overflow: 'hidden', margin: '0 auto', position: 'relative', }}>
+            <div id='cardimg' style={{ width: '200px', height: '300px', overflow: 'hidden', margin: '0 auto', position: 'relative', }}>
               <img src={movie.posterUrl} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'linear-gradient(186deg, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%)', display: 'flex', justifyContent: 'start', alignItems: 'center' }}>
                 <div style={{ display: 'flex', position: 'absolute', top: '0', left: '0' }}>

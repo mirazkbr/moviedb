@@ -16,8 +16,9 @@ button {
   color: white;
 }
 @media screen and (max-width: 375px) {
-  #card {
-    width: 50%;
-    height: 200px;
+  
+  #cardimg {
+      width: 157px !important;
+      height: auto !important;
   }
 }
