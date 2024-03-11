@@ -18,6 +18,6 @@ button {
 @media screen and (max-width: 375px) {
   #card {
     width: 50%;
-    height: auto;
+    height: 200px;
   }
 }
