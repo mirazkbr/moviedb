@@ -18,11 +18,21 @@ const App = () => {
   const fetchMovies = async () => {
     try {
       const response = await axios.get('https://moviedb-api-nrmv.onrender.com/movies');
-      setMovies(response.data);
+  
+      // Sort movies by name in ascending order
+      const sortedMovies = response.data.sort((a, b) => {
+        const nameA = a.name.toLowerCase();
+        const nameB = b.name.toLowerCase();
+        return nameA.localeCompare(nameB);
+      });
+  
+      setMovies(sortedMovies);
     } catch (error) {
-      console.error('Failed to fetch movies:', error);
+      console.error('Failed to fetch and sort movies:', error);
     }
   };
+  
+  
 
   const handleAddMovie = async () => {
     try {
@@ -61,7 +71,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div style={{background: "black"}}>
       <h1>Movies</h1>
       <div>
       <h2>Add Movie</h2>
@@ -87,10 +97,10 @@ const App = () => {
         <button onClick={handleAddMovie} style={{background: 'black', color: 'white'}}>Add Movie</button>
       </div>
       </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'start' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'start', padding: '10px'}}>
         {movies.map((movie, index) => (
-          <div key={index} style={{ display: "flex" }}>
-            <div style={{ width: '200px', height: '300px', overflow: 'hidden', margin: '0 auto', position: 'relative' }}>
+          <div id='card' key={index} style={{ display: "flex", padding: '10px' }}>
+            <div style={{ width: '200px', height: '300px', overflow: 'hidden', margin: '0 auto', position: 'relative', }}>
               <img src={movie.posterUrl} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'linear-gradient(186deg, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%)', display: 'flex', justifyContent: 'start', alignItems: 'center' }}>
                 <div style={{ display: 'flex', position: 'absolute', top: '0', left: '0' }}>
