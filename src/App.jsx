@@ -8,7 +8,7 @@ import { IoEyeOutline } from "react-icons/io5";
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [name, setName] = useState('');
-  const [year, setYear] = useState('');
+  const [year, setYear] = useState(2022); // Set initial year state to 2022
   const [posterUrl, setPosterUrl] = useState('');
 
   useEffect(() => {
@@ -32,14 +32,12 @@ const App = () => {
     }
   };
   
-  
-
   const handleAddMovie = async () => {
     try {
       await axios.post('https://moviedb-api-nrmv.onrender.com/movies', { name, year, posterUrl });
       fetchMovies();
       setName('');
-      setYear('');
+      setYear(2022); // Reset year to 2022 after adding movie
       setPosterUrl('');
       alert('Movie added successfully.');
     } catch (error) {
