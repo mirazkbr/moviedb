@@ -50,7 +50,7 @@ const App = () => {
 
   const handleMarkAsWatched = async (name) => {
     try {
-      await axios.put(`https://moviedb-api-nrmv.onrender.com/movies/${name}/watched`);
+      await axios.put(`https://moviedb-api-nrmv.onrender.com/movies/${id}/watched`);
       fetchMovies();
       alert('Movie marked as watched.');
     } catch (error) {
@@ -61,7 +61,7 @@ const App = () => {
 
   const handleAddToWishlist = async (name) => {
     try {
-      await axios.put(`https://moviedb-api-nrmv.onrender.com/movies/${name}/wishlist`);
+      await axios.put(`https://moviedb-api-nrmv.onrender.com/movies/${id}/wishlist`);
       fetchMovies();
       alert('Movie added to wishlist.');
     } catch (error) {
