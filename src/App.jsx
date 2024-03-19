@@ -7,6 +7,7 @@ import { IoEyeOutline } from "react-icons/io5";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [totalMovie, setTotalMovie] = useState([]);
   const [name, setName] = useState('');
   const [year, setYear] = useState(2022); // Set initial year state to 2022
   const [posterUrl, setPosterUrl] = useState('');
@@ -27,6 +28,7 @@ const App = () => {
       });
   
       setMovies(sortedMovies);
+      setTotalMovie(sortedMovies.length);
     } catch (error) {
       console.error('Failed to fetch and sort movies:', error);
     }
@@ -71,6 +73,7 @@ const App = () => {
   return (
     <div style={{background: "#F6F8FA"}}>
       <h1>Movies</h1>
+      <p>total: {totalMovie}<p/>
       <div>
       <h2>Add Movie</h2>
       <div>
