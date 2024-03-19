@@ -48,7 +48,7 @@ const App = () => {
     }
   };
 
-  const handleMarkAsWatched = async (name) => {
+  const handleMarkAsWatched = async (id) => { // Update function parameter to accept ID
     try {
       await axios.put(`https://moviedb-api-nrmv.onrender.com/movies/${id}/watched`);
       fetchMovies();
@@ -59,7 +59,7 @@ const App = () => {
     }
   };
 
-  const handleAddToWishlist = async (name) => {
+  const handleAddToWishlist = async (id) => { // Update function parameter to accept ID
     try {
       await axios.put(`https://moviedb-api-nrmv.onrender.com/movies/${id}/wishlist`);
       fetchMovies();
@@ -106,12 +106,12 @@ const App = () => {
               <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'linear-gradient(186deg, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%)', display: 'flex', justifyContent: 'start', alignItems: 'center' }}>
                 <div style={{ display: 'flex', position: 'absolute', top: '0', left: '0' }}>
                   <div>
-                    <button onClick={() => handleAddToWishlist(movie.name)}>
+                    <button onClick={() => handleAddToWishlist(movie._id)}> {/* Pass movie ID */}
                       {movie.wishlist ? <FaBookmark style={{color: 'green'}}/> : <FaRegBookmark style={{color: 'black'}}/>}
                     </button>
                   </div>
                   <div>
-                    <button onClick={() => handleMarkAsWatched(movie.name)}>
+                    <button onClick={() => handleMarkAsWatched(movie._id)}> {/* Pass movie ID */}
                       {movie.watched ? <IoEye style={{color: 'green'}}/> : <IoEyeOutline  style={{color: 'black'}}/>}
                     </button>
                   </div>
