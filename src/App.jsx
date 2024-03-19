@@ -73,7 +73,7 @@ const App = () => {
   return (
     <div style={{background: "#F6F8FA"}}>
       <h1>Movies</h1>
-      <p>total: {totalMovie}<p/>
+      <p>total: {totalMovie}</p>
       <div>
       <h2>Add Movie</h2>
       <div>
